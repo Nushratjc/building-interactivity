@@ -20,9 +20,19 @@ function mainFunction() {
 
 
 
+      const changeColorButton = document.getElementById('change-text-color');
+        changeColorButton.addEventListener('click', function () {
+            changeColorButton.style.color = 'black';
 
+        })
 
     
+     //Change color of H1 in #main-h1 when clicking the same button
+        const mainH1 = document.getElementById('main-h1');
+        changeColorButton.addEventListener('click', function () {
+            mainH1.style.color = 'black';
+
+        })
 
 
     // ***************************************************************************
@@ -38,7 +48,11 @@ function mainFunction() {
     
 
 
+        const changeTextButton = document.getElementById('change-text-color');
+            changeTextButton.addEventListener('click', function () {
+                changeTextButton.innerHTML = 'Hello World';
 
+            })
 
 
 
@@ -55,7 +69,12 @@ function mainFunction() {
 
 
 
-    
+
+        const subscribeButton = document.getElementById('subscribe-button');
+            subscribeButton.addEventListener('click', function () {
+                alert("Thank you for subscribing");
+
+            })
 
 
 
@@ -74,6 +93,14 @@ function mainFunction() {
 
 
     
+  const cardButton = document.querySelectorAll('.card-btn');
+    cardButton.forEach(button => {
+        button.addEventListener('click', () => {
+            // button.hidden = true; //shrinks the size like display: none;
+            button.style.visibility = 'hidden'; //leaves the space allocated to the element
+
+        })
+    })
 
 
 
@@ -92,6 +119,12 @@ function mainFunction() {
     //          the letter "h", display alert box. The .includes method may be usefull here.
 
 
+         const userInput = document.querySelector('.input-field');
+            userInput.addEventListener('keyup', function (event) {
+                if (event.key === 'h') {  //.key returns the letter - .keyCode returns numerical code of the key
+                    alert(event.target.value);
+                }
+            })
 
 
     
@@ -128,6 +161,13 @@ function mainFunction() {
     //      3.  Add a click event to the addDiv button which will run a function creating a new div
     //          with a <p> tag containing some text.
 
+          const addDiv = document.getElementById('add-element');
+            const parentDiv = document.getElementById('add-element-section');
+            const newDiv = document.createElement('DIV');
+            addDiv.onclick = function () {
+                newDiv.innerHTML = '<p>Hello World </p>';
+                parentDiv.appendChild(newDiv);
+            }
 
 
 
